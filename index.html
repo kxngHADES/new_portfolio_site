@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ndaedzo Mudau | Software Engineer</title>
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+	
+	<!-- Icons -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<!-- Mobile Menu Overlay -->
+	<div class="mobile-menu-overlay" id="mobileMenu">
+		<button class="mobile-close-btn" id="closeMenuBtn">
+			<i data-lucide="x" size="32"></i>
+		</button>
+		<a href="#" class="mobile-nav-link">Home</a>
+		<a href="#experience" class="mobile-nav-link">Experience</a>
+		<a href="#projects" class="mobile-nav-link">Projects</a>
+		<a href="#stack" class="mobile-nav-link">Stack</a>
+		<a href="mailto:ndaedzomu101@gmail.com" class="mobile-nav-link" style="color: var(--accent-color);">Contact</a>
+	</div>
+
+	<header>
+		<div class="nav-left">
+			<a href="#experience" class="nav-link">Experience</a>
+			<a href="#projects" class="nav-link" style="margin-left: 15px;">Projects</a>
+            <a href="#stack" class="nav-link" style="margin-left: 15px;">Stack</a>
+		</div>
+
+		<!-- Permanent Social Icons (Visible on Mobile Left) -->
+		<div class="nav-socials" style="display: flex; gap: 12px; margin-right: auto; padding-left: 24px;">
+			<a href="https://github.com/kxngHADES" target="_blank" class="icon-btn"><i data-lucide="github"></i></a>
+			<a href="https://linkedin.com/in/rudzani-mudau" target="_blank" class="icon-btn"><i data-lucide="linkedin"></i></a>
+		</div>
+		
+		<div class="nav-right">
+			<a href="mailto:ndaedzomu101@gmail.com" class="btn-primary">Connect</a>
+			<button class="icon-btn" id="openMenuBtn" style="display: flex; align-items: center; gap: 8px;">
+				<i data-lucide="menu"></i>
+			</button>
+		</div>
+	</header>
+
+	<h1 class="brand-logo">NDAEDZO</h1>
+
+	<section class="hero">
+		<!-- We keep the same cool, stark image representing system architecture/depth -->
+		<div class="hero-bg"></div>
+		<div class="hero-overlay"></div>
+		<div class="scroll-hint">Software Engineer</div>
+	</section>
+
+    <!-- Experience Section (Using ReTrade Gallery format) -->
+	<section id="experience" class="section-container">
+		<div class="section-header">
+			<p class="section-subtitle">Developer Experience</p>
+			<h2 class="section-title">Selected<br>Work Experience.</h2>
+			<p style="max-width: 600px; margin: 0 auto; line-height: 1.6; color: #555;">
+				I Build scalable, production-ready software.<br/>Focused on backend development & infrastructure, system architecture, and modern mobile/web experiences, and some fun frontend every once in a while. <br/>They are all for startups started by either me or peers on campus gained alot of knowledge and insight here
+			</p>
+		</div>
+
+		<div class="grid-gallery">
+			<!-- Card 1 -->
+			<div class="card">
+				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Code">
+				<div class="card-content">
+					<div class="card-title">Plantify Tech</div>
+					<div class="card-loc" style="color: white; font-weight: 600;">Founding Software Engineer</div>
+                    <div class="card-loc" style="margin-top: 2px;"><i data-lucide="code" size="14"></i> Next.js, FastAPI, PHP, ASP.NET, C#, docker, AWS, Cloudflare, API Design, Investor communication, Presentation</div>
+				</div>
+			</div>
+			
+			<!-- Card 2 -->
+			<div class="card">
+				<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Data">
+				<div class="card-content">
+					<div class="card-title">ASG Studios</div>
+					<div class="card-loc" style="color: white; font-weight: 600;">CEO/Network Engineer</div>
+                    <div class="card-loc" style="margin-top: 2px;"><i data-lucide="smartphone" size="14"></i> Cisco PT, VLAN, Subnetting, Systems administration</div>
+				</div>
+			</div>
+			
+			<!-- Card 3 -->
+			<div class="card">
+				<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop" alt="Hardware">
+				<div class="card-content">
+					<div class="card-title">Cars4Mars</div>
+					<div class="card-loc" style="color: white; font-weight: 600;">AI/Deep Learning</div>
+                    <div class="card-loc" style="margin-top: 2px;"><i data-lucide="cpu" size="14"></i> Python, PyTorch, Neural Nets, Websockets, API Design, Automation, autonomous</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section (Using ReTrade Steps format) -->
+	<div class="bg-light">
+		<section id="projects" class="section-container">
+			<div class="section-header">
+				<p class="section-subtitle">Featured Work</p>
+				<h2 class="section-title">Case Studies & Projects</h2>
+			</div>
+
+			<div class="steps-grid" id="projectsContainer">
+				<!-- Javascript will dynamically build project cards here -->
+			</div>
+
+			<!-- Education Callouts -->
+			<div style="display: flex; flex-direction: column; gap: 20px;">
+				<div class="spaza-banner">
+					<div style="flex: 1;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 10px;">BSc Information Technology</h3>
+						<p style="color: #ccc; max-width: 500px; line-height: 1.6;">
+							<strong>Specialized in:</strong> Software Engineering<br>
+							<strong>Current Average:</strong> 82%<br>
+							<strong>Timeline:</strong> Feb 2024 &mdash; Dec 2026
+						</p>
+					</div>
+					<div class="step-icon" style="background: white; color: #1a1a1a; margin: 0;"><i data-lucide="graduation-cap" size="32"></i></div>
+				</div>
+
+				<div class="spaza-banner">
+					<div style="flex: 1;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 10px;">Higher Certificate Information Systems</h3>
+						<p style="color: #ccc; max-width: 500px; line-height: 1.6;">
+							<strong>Specialized in:</strong> Software Development<br>
+							<strong>Final Average:</strong> 84%<br>
+							<strong>Timeline:</strong> Feb 2023 &mdash; Nov 2023
+						</p>
+					</div>
+					<div class="step-icon" style="background: white; color: #1a1a1a; margin: 0;"><i data-lucide="award" size="32"></i></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Tech Stack Title Section -->
+		<section class="section-container" style="padding-bottom: 0;">
+			<div class="section-header" style="margin-bottom: 0;">
+				<p class="section-subtitle">Infrastructure & Languages</p>
+				<h2 class="section-title">My Tech Stack & Skills.</h2>
+			</div>
+		</section>
+
+	<div class="main-content">
+		
+		<!-- Neo4j Cypher Query Simulator (Independent Terminal) -->
+		<div class="cypher-query-container" style="max-width: 1400px; margin: 20px auto -10px auto; position: relative; z-index: 10;">
+			<div class="cypher-bar">
+				<span class="cypher-keyword">MATCH</span> (n:<select id="cypherCategory">
+					<option value="All">All_Technologies</option>
+					<option value="Core">Core</option>
+					<option value="Languages">Languages</option>
+					<option value="Frontend">Frontend</option>
+					<option value="Backend">Backend</option>
+					<option value="DevOps">DevOps</option>
+					<option value="Networking">Networking</option>
+				</select>) 
+				<span class="cypher-keyword">WHERE</span> n.name <span class="cypher-keyword">=</span> 
+				<span class="cypher-string">'</span><select id="cypherNode">
+					<!-- Populated dynamically via JS -->
+					<option value="All">All_Nodes</option>
+				</select><span class="cypher-string">'</span>
+				
+				<div style="margin-left: auto; display: flex; gap: 10px;">
+					<button id="cypherRunBtn" class="cypher-run-btn"><i data-lucide="play" size="16"></i> Run</button>
+					<button id="cypherResetBtn" class="cypher-reset-btn"><i data-lucide="rotate-ccw" size="16"></i> Reset</button>
+				</div>
+			</div>
+		</div>
+
+	<!-- Stack Section (Using D3 Force Directed Graph) -->
+	<section id="stack" class="section-container" style="background-color: #FAFAFA;">
+		<div id="d3-container" class="d3-graph-container">
+			<!-- D3 will render the Neo4j style SVG here -->
+		</div>
+		<div class="mobile-scroll-hint">
+			<i data-lucide="info" size="14"></i> Swipe outside the box to keep scrolling
+		</div>
+	</section>
+
+	<!-- Relational SQL Stack Tables -->
+	<section id="relational-stack" class="section-container" style="background-color: #fff; padding-top: 10px;">
+		<!-- SQL Query Simulator -->
+		<div class="sql-query-container" style="max-width: 1400px; margin: 0 auto 20px auto;">
+			<div class="cypher-bar"> <!-- Reusing cypher terminal aesthetics -->
+				<span class="cypher-keyword">SELECT</span> * <span class="cypher-keyword">FROM</span>
+				<select id="sqlTable">
+					<option value="All">All_Tables</option>
+					<option value="tbl_languages">tbl_languages</option>
+					<option value="tbl_frontend">tbl_frontend</option>
+					<option value="tbl_backend">tbl_backend</option>
+					<option value="tbl_devops">tbl_devops</option>
+					<option value="tbl_networking">tbl_networking</option>
+				</select>
+				<span class="cypher-keyword">WHERE</span> name <span class="cypher-keyword">=</span> 
+				<span class="cypher-string">'</span><select id="sqlRow">
+					<option value="All">All_Rows</option>
+				</select><span class="cypher-string">'</span>
+				
+				<div style="margin-left: auto; display: flex; gap: 10px;">
+					<button id="sqlRunBtn" class="cypher-run-btn" style="background: #10b981;"><i data-lucide="database" size="16"></i> Run Query</button>
+					<button id="sqlResetBtn" class="cypher-reset-btn"><i data-lucide="rotate-ccw" size="16"></i> Reset</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="sql-tables-grid" id="sqlTablesContainer">
+			<!-- Javascript will dynamically generate and render HTML tables here -->
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="section-container" style="background-color: #FAFAFA; padding: 100px 20px 140px 20px; overflow: hidden;">
+		<h2 class="cta-massive-text">CONNECT</h2>
+		<div class="cta-buttons">
+			<a href="mailto:ndaedzomu101@gmail.com" class="btn-pill">
+				<i data-lucide="mail"></i> Email Me
+			</a>
+			<a href="https://wa.me/27712229813" target="_blank" class="btn-pill btn-pill-whatsapp">
+				<i data-lucide="message-circle"></i> WhatsApp
+			</a>
+		</div>
+	</section>
+
+</div>
+
+    <!-- Footer -->
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid #ddd; background: #fff;">
+        <p style="color: #666; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+            &copy; 2026 Ndaedzo Mudau
+        </p>
+    </footer>
+
+    <!-- Skill Context Modal Overlay -->
+    <div id="skillModal" class="skill-modal-overlay">
+        <div class="skill-modal-card">
+            <button class="modal-close" id="modalCloseBtn"><i data-lucide="x"></i></button>
+            <h3 id="modalTitle" class="modal-title">Skill Name</h3>
+            <p id="modalCategory" class="modal-category">Category</p>
+            <div class="modal-divider"></div>
+            <p id="modalContext" class="modal-context">Detailed context about where and how this skill was utilized...</p>
+        </div>
+    </div>
+
+    <!-- Custom Dynamic Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+	<script src="script.js"></script>
+</body>
+</html>
