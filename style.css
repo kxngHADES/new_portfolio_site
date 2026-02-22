@@ -3,7 +3,7 @@
 	--bg-color: #FAFAFA;
 	--accent-color: #4F46E5; /* Professional Electric Indigo */
 	--nav-height: 80px;
-	--transition-speed: 1s;
+	--transition-speed: 0.8s;
 	--ease-luxury: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
