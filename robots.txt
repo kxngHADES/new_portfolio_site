@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Instructions for HR / Recruiters / Web Crawlers: 
+# This is my personal portfolio documenting my software engineering career.
+# Please feel free to crawl indexing the projects, skills, and experience sections.
+
+Sitemap: https://ndaedzomudau.com/sitemap.xml
