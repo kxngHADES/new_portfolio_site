@@ -70,7 +70,24 @@ const projectsData = [
 			stack: ["TypeScript", "CSS", "JavaScript", "HTML"],
 			github: "https://github.com/kxngHADES/tower_of_hanoi",
 			live: "https://tower-of-hanoi.ndaedzo.com/"
-		},
+	},
+		
+		{
+			title: "YN Programming Language",
+			icon: "app-window",
+			description: "A simple programming language build using C with inspo from python TBH IDK how Guido van Rossum made a programming language where you dont need a colon at the end or how its works on indentation not { \n}",
+			stack: ["C", "bash"],
+			github: "https://github.com/kxngHADES/yn-programming-language",
+			live: "https://yn-coding-language.ndaedzo.com/"
+	},
+	{
+		title: "RudzaniOS",
+		icon: "terminal",
+		description: "A custom, minimal 32-bit protected-mode operating system built entirely from scratch. It features its own bootloader, kernel, memory management, virtual filesystem, and an interactive shell loaded with custom tools and arcade games.",
+		stack: ["C", "Assembly", "Bash/Shell"],
+		github: "https://github.com/kxngHADES/RudzaniOS",
+		live: "https://rudzanios.ndaedzo.com/"
+	},
     {
         title: "Bugs Network",
         icon: "server",
@@ -93,22 +110,6 @@ const projectsData = [
         description: "C2C e-commerce Xamarin mobile application allowing users to list products for peer-to-peer selling on the platform.",
         stack: ["C#", "SQLite3", "Xamarin", "Mobile UI"],
         github: "https://github.com/kxngHADES/BuyAlot",
-	},
-		{
-			title: "YN Programming Language",
-			icon: "app-window",
-			description: "A simple programming language build using C with inspo from python TBH IDK how Guido van Rossum made a programming language where you dont need a colon at the end or how its works on indentation not { }",
-			stack: ["C", "bash"],
-			github: "https://github.com/kxngHADES/yn-programming-language",
-			live: "https://yn-coding-language.ndaedzo.com/"
-	},
-	{
-		title: "RudzaniOS",
-		icon: "terminal",
-		description: "A custom, minimal 32-bit protected-mode operating system built entirely from scratch. It features its own bootloader, kernel, memory management, virtual filesystem, and an interactive shell loaded with custom tools and arcade games.",
-		stack: ["C", "Assembly", "Bash/Shell"],
-		github: "https://github.com/kxngHADES/RudzaniOS",
-		live: "https://rudzanios.ndaedzo.com/"
 	},
 		{
 			title: "FoodHarbor",
