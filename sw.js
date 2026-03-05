@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-cache-v2';
+const CACHE_NAME = 'portfolio-cache-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,8 +6,9 @@ const ASSETS_TO_CACHE = [
   './script.js'
 ];
 
-// Install event: cache essential assets
+// Install event: cache essential assets and activate immediately
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[Service Worker] Caching app shell');
@@ -16,9 +17,8 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Fetch event: serve from cache if available, fallback to network
+// Fetch event: network-first, fall back to cache
 self.addEventListener('fetch', (event) => {
-  // Ignore Live Server injected scripts and WebSockets
   if (
     event.request.url.includes('socket.io') ||
     event.request.url.includes('/ws') ||
@@ -28,13 +28,25 @@ self.addEventListener('fetch', (event) => {
   }
 
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then((networkResponse) => {
+        // Update the cache with the fresh response
+        if (networkResponse && networkResponse.ok) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
+      })
+      .catch(() => {
+        // Network failed, fall back to cache
+        return caches.match(event.request);
+      })
   );
 });
 
-// Activate event: clean up old caches
+// Activate event: claim clients immediately and clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -46,6 +58,6 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
