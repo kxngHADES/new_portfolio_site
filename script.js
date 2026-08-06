@@ -93,7 +93,7 @@ const projectsData = [
         icon: "server",
         description: "Cisco Packet Tracer simulation of a multi-floor office network. Includes VLAN/subnet design, RIP/OSPF routing, and DMZ configurations.",
         stack: ["Cisco PT", "OSPF/RIP", "Subnetting", "Linux"],
-        github: "https://github.com/Ndaedzo1/Bugs-Network",
+        github: "https://github.com/kxngHADES/Bugs-Network",
         live: ""
     },
     {
@@ -101,7 +101,7 @@ const projectsData = [
         icon: "map",
         description: "Social media travel application combining hotel booking features with Instagram-like photo sharing. Built natively in Android Studio.",
         stack: ["Java", "Firebase", "Android Studio", "UX Design"],
-        github: "https://github.com/Ndaedzo1/TripBuddy",
+        github: "https://github.com/kxngHADES/TripBuddy",
         live: ""
     },
     {
